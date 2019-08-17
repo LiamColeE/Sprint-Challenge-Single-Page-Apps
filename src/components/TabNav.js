@@ -12,24 +12,19 @@ const tabs = [
 // TODO: Add missing tabs below
 export default function TabNav() {
     return (
-        <div>
-            <Menu>
-                <Menu.Item>
-                    <NavLink to="/">Home Page</NavLink>
-                </Menu.Item>
-                <Menu.Item>
-                    <NavLink to="/locations">Locations</NavLink>
-                </Menu.Item>
-                <Menu.Item>
-                    <NavLink to="/characters">Characters</NavLink>
-                </Menu.Item>
-                <Menu.Item>
-                    <NavLink to="/episodes">Episodes</NavLink>
-                </Menu.Item>
-
-
-
-            </Menu>
+        <div style={{display: 'flex', flexDirection: 'row' }}>
+        <Menu.Item>
+            <NavLink to="/">Home Page</NavLink>
+        </Menu.Item>
+        <Menu.Item>
+            <NavLink to="/locations">Locations</NavLink>
+        </Menu.Item>
+        <Menu.Item>
+            <NavLink to="/characters">Characters</NavLink>
+        </Menu.Item>
+        <Menu.Item>
+            <NavLink to="/episodes">Episodes</NavLink>
+        </Menu.Item>
         </div>
     )
 };
