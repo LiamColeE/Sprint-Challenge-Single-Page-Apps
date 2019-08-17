@@ -30,7 +30,7 @@ export default function LocationsList() {
             {
                 locations.map(location => (
                     // <NavLink to={`location/${location.id}`}>
-                        <LocationCard location={location}/>
+                    <LocationCard location={location} />
                     // </NavLink>
                 ))
             }

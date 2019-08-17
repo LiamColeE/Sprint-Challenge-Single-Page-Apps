@@ -29,7 +29,7 @@ export default function EpisodesList() {
         <Card.Group centered={true}>
             {
                 episodes.map(episode => (
-                        <EpisodesCard episode={episode}/>
+                    <EpisodesCard episode={episode} />
                 ))
             }
         </Card.Group>

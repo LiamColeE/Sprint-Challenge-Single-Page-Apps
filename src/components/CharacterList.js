@@ -7,31 +7,31 @@ export default function CharacterList() {
   const [characters, setCharacters] = useState();
 
   useEffect(() => {
-      const getCharacters = () => {
-          axios
-              .get('https://rickandmortyapi.com/api/character/')
-              .then(response => {
-                  console.log(response);
-                  setCharacters(response.data.results);
-              })
-              .catch(error => {
-                  console.error('Server Error', error);
-              });
-      }
+    const getCharacters = () => {
+      axios
+        .get('https://rickandmortyapi.com/api/character/')
+        .then(response => {
+          console.log(response);
+          setCharacters(response.data.results);
+        })
+        .catch(error => {
+          console.error('Server Error', error);
+        });
+    }
 
-      getCharacters();
+    getCharacters();
   }, []);
 
-  if(!characters){
-      return <div>Loading...</div>
+  if (!characters) {
+    return <div>Loading...</div>
   }
   return (
-      <Card.Group centered={true}>
-          {
-              characters.map(character => (
-                  <CharacterCard character={character}/>
-              ))
-          }
-      </Card.Group>
+    <Card.Group centered={true}>
+      {
+        characters.map(character => (
+          <CharacterCard character={character} />
+        ))
+      }
+    </Card.Group>
   )
 }

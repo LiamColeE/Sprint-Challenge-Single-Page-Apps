@@ -7,6 +7,8 @@ export default function LocationCard(props) {
       <Card.Content>
         <Card.Header>{props.location.name}</Card.Header>
         <Card.Meta>Population: {props.location.residents.length}</Card.Meta>
+        <Card.Meta>Type: {props.location.type}</Card.Meta>
+        <Card.Meta>Dimension: {props.location.dimension}</Card.Meta>
       </Card.Content>
     </Card>
   );
