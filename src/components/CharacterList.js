@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
 import { Card } from "semantic-ui-react";
+import CharacterCard from "./CharacterCard";
 
 export default function CharacterList() {
   const [characters, setCharacters] = useState();
@@ -25,14 +26,12 @@ export default function CharacterList() {
       return <div>Loading...</div>
   }
   return (
-      <div>
+      <Card.Group>
           {
               characters.map(character => (
-                  <Card>
-                      {character.name}
-                  </Card>
+                  <CharacterCard character={character}/>
               ))
           }
-      </div>
+      </Card.Group>
   )
 }

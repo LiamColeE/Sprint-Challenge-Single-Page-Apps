@@ -2,36 +2,34 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
-import LocationCard from "./LocationCard";
+import EpisodesCard from "./EpisodesCard";
 
-export default function LocationsList() {
-    const [locations, setLocations] = useState();
+export default function EpisodesList() {
+    const [episodes, setEpisodes] = useState();
 
     useEffect(() => {
-        const getlocations = () => {
+        const getEpisodes = () => {
             axios
-                .get('https://rickandmortyapi.com/api/location/')
+                .get('https://rickandmortyapi.com/api/episode/')
                 .then(response => {
                     console.log(response);
-                    setLocations(response.data.results);
+                    setEpisodes(response.data.results);
                 })
                 .catch(error => {
                     console.error('Server Error', error);
                 });
         }
 
-        getlocations();
+        getEpisodes();
     }, []);
-    if (!locations) {
+    if (!episodes) {
         return <div>Loading...</div>
     }
     return (
         <Card.Group>
             {
-                locations.map(location => (
-                    // <NavLink to={`location/${location.id}`}>
-                        <LocationCard location={location}/>
-                    // </NavLink>
+                episodes.map(episode => (
+                        <EpisodesCard episode={episode}/>
                 ))
             }
         </Card.Group>
