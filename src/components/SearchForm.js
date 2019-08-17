@@ -19,7 +19,7 @@ export default function SearchForm() {
       <form onSubmit={onSearch}>
         <input
           onChange={handleInputChange}
-          placeholder="name"
+          placeholder="Search"
           value={name}
           name="name"
         />

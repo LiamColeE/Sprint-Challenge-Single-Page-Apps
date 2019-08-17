@@ -6,7 +6,7 @@ export default function EpisodesCard(props) {
     <Card>
       <Card.Content>
         <Card.Header>{props.episode.name}</Card.Header>
-        <Card.Meta></Card.Meta>
+        <Card.Meta>{props.episode.episode} aired on {props.episode.air_date}</Card.Meta>
       </Card.Content>
     </Card>
   );

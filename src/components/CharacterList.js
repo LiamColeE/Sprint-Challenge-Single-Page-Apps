@@ -26,7 +26,7 @@ export default function CharacterList() {
       return <div>Loading...</div>
   }
   return (
-      <Card.Group>
+      <Card.Group centered={true}>
           {
               characters.map(character => (
                   <CharacterCard character={character}/>

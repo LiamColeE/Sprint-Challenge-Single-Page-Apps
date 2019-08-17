@@ -21,7 +21,7 @@ export default function SearchResults(props) {
                     setEpisodes(response.data.results);
                 })
                 .catch(error => {
-                    console.error('Server Error', error);
+                    //console.error('Server Error', error);
                     setEpisodes([]);
                 });
         }
@@ -38,7 +38,7 @@ export default function SearchResults(props) {
                     setLocations(response.data.results);
                 })
                 .catch(error => {
-                    console.error('Server Error', error);
+                    //console.error('Server Error', error);
                     setLocations([]);
                 });
         }
@@ -55,7 +55,7 @@ export default function SearchResults(props) {
                     setCharacters(response.data.results);
                 })
                 .catch(error => {
-                    console.error('Server Error', error);
+                    //console.error('Server Error', error);
                     setCharacters([]);
                 });
         }
@@ -68,23 +68,36 @@ export default function SearchResults(props) {
         return <div>Loading...</div>
     }
 
+    if (episodes == [] && characters == [] && locations == []) {
+        return <h1>There were no results :(</h1>
+    }
+
     return (
-        <Card.Group>
-            {
-                episodes.map(episode => (
-                    <EpisodesCard episode={episode} />
-                ))
-            }
-            {
-                characters.map(character => (
-                    <CharacterCard character={character} />
-                ))
-            }
-            {
-                locations.map(location => (
-                    <LocationCard location={location} />
-                ))
-            }
-        </Card.Group>
+        <div>
+            <h1>Episodes:</h1>
+            <Card.Group centered={true}>
+                {
+                    episodes.map(episode => (
+                        <EpisodesCard episode={episode} />
+                    ))
+                }
+            </Card.Group>
+            <h1>Characters:</h1>
+            <Card.Group centered={true}>
+                {
+                    characters.map(character => (
+                        <CharacterCard character={character} />
+                    ))
+                }
+            </Card.Group >
+            <h1>Locations:</h1>
+            <Card.Group centered={true}>
+                {
+                    locations.map(location => (
+                        <LocationCard location={location} />
+                    ))
+                }
+            </Card.Group>
+        </div>
     )
 }

@@ -26,7 +26,7 @@ export default function LocationsList() {
         return <div>Loading...</div>
     }
     return (
-        <Card.Group>
+        <Card.Group centered={true}>
             {
                 locations.map(location => (
                     // <NavLink to={`location/${location.id}`}>

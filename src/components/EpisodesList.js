@@ -26,7 +26,7 @@ export default function EpisodesList() {
         return <div>Loading...</div>
     }
     return (
-        <Card.Group>
+        <Card.Group centered={true}>
             {
                 episodes.map(episode => (
                         <EpisodesCard episode={episode}/>
